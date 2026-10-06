@@ -9,7 +9,7 @@ def safe_calculator(func):
             print(f"Помилка у виразі '{expression}': Некоректний синтаксис або невідомі символи")
             return None
         except Exception as e:
-            print(f"Виникла непередбачувана помилка при обчисленні '{expression}': {e}")
+            print(f"Виникла помилка при обчисленні '{expression}': {e}")
             return None
     return wrapper
 
@@ -19,7 +19,7 @@ def calculate(expression):
     return eval(expression)
 
 
-print("Результат 2 + 2 * 3:", calculate("2 + 2 * 3"))      # Коректний вираз
-print("Результат 10 / 0:", calculate("10 / 0"))          # Ділення на нуль (захищено)
-print("Результат 5 + abc:", calculate("5 + abc"))        # Помилка імені/змінної (захищено)
-print("Результат 2 ++ 3:", calculate("2 ++ 3"))          # Синтаксична помилка (захищено)
+print("Результат 2 + 2 * 3:", calculate("2 + 2 * 3"))      
+print("Результат 10 / 0:", calculate("10 / 0"))        
+print("Результат 5 + abc:", calculate("5 + abc"))        
+print("Результат 2 ++ 3:", calculate("2 ++ 3"))          
